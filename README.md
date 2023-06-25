@@ -7,10 +7,10 @@ POCO Generator https://www.codeproject.com/Articles/892233/POCO-Generator
 ## Screenshot
 
 Login </br>
-![Login](https://github.com/EnterpriseSolution/POCO-Generator/blob/master/Resources/Login.jpg)
+![Login](https://github.com/EnterpriseSolution/POCO-Generator/blob/master/Login.jpg)
 
 Generator </br>
-![Generator](https://github.com/EnterpriseSolution/POCO-Generator/blob/master/Resources/Generator.jpg)
+![Generator](https://github.com/EnterpriseSolution/POCO-Generator/blob/master/Generator.jpg)
 
 ## Dependency
 
