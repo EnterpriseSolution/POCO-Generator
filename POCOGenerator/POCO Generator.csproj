@@ -59,15 +59,15 @@
     <StartupObject>POCOGenerator.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Data.ConnectionUI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=f4ca07f51760da93, processorArchitecture=MSIL">
-      <HintPath>..\packages\DataConnectionDialog.1.2\Lib\Microsoft.Data.ConnectionUI.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.Data.ConnectionUI">
+      <HintPath>..\Library\Microsoft.Data.ConnectionUI.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Data.ConnectionUI.Dialog, Version=0.0.0.0, Culture=neutral, PublicKeyToken=f4ca07f51760da93, processorArchitecture=MSIL">
-      <HintPath>..\packages\DataConnectionDialog.1.2\Lib\Microsoft.Data.ConnectionUI.Dialog.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.Data.ConnectionUI.Dialog">
+      <HintPath>..\Library\Microsoft.Data.ConnectionUI.Dialog.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.Xml.Linq" />
@@ -140,8 +140,7 @@
     <EmbeddedResource Include="TypeMappingForm.resx">
       <DependentUpon>TypeMappingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ILMerge.props" />
-    <None Include="packages.config" />
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -186,22 +185,11 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="ILMergeOrder.txt" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
     </PostBuildEvent>
-  </PropertyGroup>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\MSBuild.ILMerge.Task.1.0.5-rc1\build\MSBuild.ILMerge.Task.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSBuild.ILMerge.Task.1.0.5-rc1\build\MSBuild.ILMerge.Task.props'))" />
-    <Error Condition="!Exists('..\packages\MSBuild.ILMerge.Task.1.0.5-rc1\build\MSBuild.ILMerge.Task.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSBuild.ILMerge.Task.1.0.5-rc1\build\MSBuild.ILMerge.Task.targets'))" />
-  </Target>
-  <Import Project="..\packages\MSBuild.ILMerge.Task.1.0.5-rc1\build\MSBuild.ILMerge.Task.targets" Condition="Exists('..\packages\MSBuild.ILMerge.Task.1.0.5-rc1\build\MSBuild.ILMerge.Task.targets')" />
+  </PropertyGroup> 
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
